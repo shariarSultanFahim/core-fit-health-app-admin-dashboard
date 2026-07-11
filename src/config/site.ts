@@ -1,13 +1,13 @@
-import type { SiteConfig } from "@/types/site-config";
 import { env } from "@/env";
+import type { SiteConfig } from "@/types/site-config";
 
 export const siteConfig: SiteConfig = {
-  name: "Rise & Impact Admin Panel",
-  description: "Production-ready Next.js 16+ starter built with Tailwind CSS 4 and TypeScript.",
+  name: "Admin Dashboard of CoreFit App",
+  description: "This is an admin dashboard for CoreFit App",
   url: env.NEXT_PUBLIC_SITE_URL,
-  author: "",
+  author: "CoreFit",
   locale: "en",
-  themeColor: "#576045",
+  themeColor: "#012150",
   keywords: ["nextjs", "typescript", "tailwindcss", "boilerplate", "starter"],
   social: {
     twitter: "",
