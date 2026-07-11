@@ -1,11 +1,17 @@
 "use client";
 import {
+  BarChart3,
+  Bell,
   BookOpen,
-  ClipboardClock,
+  CreditCard,
+  Dumbbell,
+  FlaskConical,
   HeartHandshake,
   LayoutDashboard,
   LogOut,
-  UserRoundPen
+  Settings,
+  Users,
+  Activity
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,45 +37,39 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const data = {
   info: {
-    title: "Rise & Impact",
-    subtitle: "Instructor Portal"
+    title: "CoreFit Health",
+    subtitle: "Admin Dashboard"
   },
   navMain: [
     {
-      title: "",
+      title: "Platform",
       items: [
-        {
-          title: "Overview",
-          url: "/overview",
-          icon: LayoutDashboard
-        },
-        {
-          title: "User Management",
-          url: "/user-management",
-          icon: ClipboardClock
-        },
-        {
-          title: "Course",
-          url: "/courses",
-          icon: BookOpen
-        }
+        { title: "Overview", url: "/overview", icon: LayoutDashboard },
+        { title: "User Management", url: "/users", icon: Users },
+        { title: "Membership", url: "/membership", icon: CreditCard },
+        { title: "Analytics", url: "/analytics", icon: BarChart3 },
       ]
-    }
-  ],
-  navSec: [
+    },
     {
-      title: "Footer",
+      title: "Content & Comm",
       items: [
-        {
-          title: "Profile",
-          url: "#",
-          icon: UserRoundPen
-        },
-        {
-          title: "Support",
-          url: "#",
-          icon: HeartHandshake
-        }
+        { title: "Content", url: "/content", icon: BookOpen },
+        { title: "Notifications", url: "/notifications", icon: Bell },
+        { title: "Help & Support", url: "/support", icon: HeartHandshake },
+      ]
+    },
+    {
+      title: "Health & Fitness",
+      items: [
+        { title: "Fitness Tracking", url: "/fitness", icon: Dumbbell },
+        { title: "Lab Results", url: "/lab-results", icon: FlaskConical },
+        { title: "Metabolic Index", url: "/metabolic-index", icon: Activity },
+      ]
+    },
+    {
+      title: "System",
+      items: [
+        { title: "Settings", url: "/settings", icon: Settings },
       ]
     }
   ]
@@ -86,11 +86,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton size="lg" asChild>
               <Link href="/">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Image src="/logo.png" alt="Logo" width={32} height={32} />
+                  <Image src="/logo.svg" alt="Logo" width={32} height={32} />
                 </div>
                 <div className="grid flex-1 text-sm leading-tight">
                   <span className="truncate text-sm font-bold">{data.info.title}</span>
-                  <span className="truncate text-xs font-semibold text-sidebar-foreground/60">
+                  <span className="truncate text-xs font-semibold sidebar-accent-foreground">
                     {data.info.subtitle}
                   </span>
                 </div>
@@ -110,7 +110,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarMenuButton 
                       asChild 
                       isActive={pathname === item.url}
-                      className="data-[active=true]:bg-white/25 data-[active=true]:shadow-md data-[active=true]:backdrop-blur-sm data-[active=true]:text-primary-foreground"
+                      className="data-[active=true]:bg-sidebar-accent data-[active=true]:shadow-md data-[active=true]:backdrop-blur-sm data-[active=true]:sidebar-accent-foreground"
                     >
                       <Link href={item.url}>
                         <item.icon />

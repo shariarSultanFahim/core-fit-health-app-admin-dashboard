@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { seoConfig } from "@/config/seo";
@@ -9,13 +9,13 @@ import { Toaster } from "@/ui";
 
 import "@/styles/globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"]
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"]
 });
 
@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen w-full flex-col antialiased`}
+        className={`${dmSans.variable} ${inter.variable} font-sans flex min-h-screen w-full flex-col antialiased bg-background text-foreground`}
       >
         <Providers>
           <main className="flex-1">{children}</main>
