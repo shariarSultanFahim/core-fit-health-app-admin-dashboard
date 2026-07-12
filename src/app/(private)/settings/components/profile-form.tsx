@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
 
 export function ProfileForm() {
   return (
@@ -43,14 +42,14 @@ export function ProfileForm() {
             <Input id="role" defaultValue="Chief Medical Officer" />
           </div>
 
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <Label htmlFor="bio">Bio</Label>
             <Textarea 
               id="bio" 
               className="min-h-[100px]"
               defaultValue="Overseeing clinical protocols and lab marker accuracy for the CoreFit platform."
             />
-          </div>
+          </div> */}
         </div>
       </CardContent>
       <CardFooter className="bg-muted/10 border-t px-6 py-4 flex justify-end">
