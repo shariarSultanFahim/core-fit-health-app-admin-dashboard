@@ -1,5 +1,6 @@
 "use client";
 import {
+  Activity,
   BarChart3,
   Bell,
   BookOpen,
@@ -10,8 +11,7 @@ import {
   LayoutDashboard,
   LogOut,
   Settings,
-  Users,
-  Activity
+  Users
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -79,7 +79,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
    const pathname = usePathname();
 
   return (
-    <Sidebar variant="inset" collapsible="icon" {...props}>
+    <Sidebar variant="inset" collapsible="icon" className="transition-all duration-300 ease-in-out" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

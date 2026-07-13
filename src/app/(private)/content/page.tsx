@@ -3,8 +3,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { PageHeader } from "@/components/widgets/page-header"
 
-import { ContentTable } from "./components/content-table"
 import { AnnouncementsTable } from "./components/announcements-table"
+import { ContentTable } from "./components/content-table"
 import { FAQTable } from "./components/faq-table"
 
 export default function ContentPage() {
@@ -16,11 +16,11 @@ export default function ContentPage() {
       />
 
       <Tabs defaultValue="articles" className="space-y-4">
-        <TabsList>
-          <TabsTrigger value="articles">Articles & Lessons</TabsTrigger>
-          <TabsTrigger value="recipes">Recipes & Meal Plans</TabsTrigger>
-          <TabsTrigger value="announcements">Announcements</TabsTrigger>
-          <TabsTrigger value="faq">FAQ</TabsTrigger>
+        <TabsList className="w-full justify-start overflow-x-auto h-auto p-1">
+          <TabsTrigger value="articles" className="whitespace-nowrap">Articles & Lessons</TabsTrigger>
+          <TabsTrigger value="recipes" className="whitespace-nowrap">Recipes & Meal Plans</TabsTrigger>
+          <TabsTrigger value="announcements" className="whitespace-nowrap">Announcements</TabsTrigger>
+          <TabsTrigger value="faq" className="whitespace-nowrap">FAQ</TabsTrigger>
         </TabsList>
         <TabsContent value="articles" className="space-y-4">
           <ContentTable type="articles" />

@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
   })
 
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0">
       <div className="flex items-center py-4 gap-2">
         {searchKey && (
           <Input
@@ -110,7 +110,7 @@ export function DataTable<TData, TValue>({
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="rounded-md border bg-card">
+      <div className="rounded-md border bg-card overflow-hidden overflow-x-auto">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
