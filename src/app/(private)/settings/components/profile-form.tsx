@@ -11,7 +11,7 @@ export function ProfileForm() {
   return (
     <Card className="border shadow-sm">
       <CardHeader>
-        <CardTitle>Admin Profile</CardTitle>
+        <CardTitle>Admin Profile Page</CardTitle>
         <CardDescription>
           Update your personal information. These details will be visible to the team.
         </CardDescription>
